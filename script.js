@@ -97,3 +97,6 @@ function loadMenuCategory(category) {
 
 // Initialize the button setup
 setupCategoryButtons();
+
+
+//New change has been made
