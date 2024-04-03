@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#hero {
+    background: url("src\\img\\thali.png") no-repeat center center;
+    text-align: center;
+    padding: 100px 0;
+    color: #000;
+}
+
+#specials, #about, #hours, footer {
+    text-align: center;
+    padding: 50px 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+}
+
+footer h2 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Adjust the size of your logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 20px; /* Adjust the space between the links as needed */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.cart-button {
+    background-color: #e0e0e0; /* Light gray color, adjust as needed */
+    color: #000; /* Text color */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.cart-button:hover {
+    background-color: #f0f0f0; /* Slightly lighter gray for hover effect */
+}
