@@ -40,7 +40,37 @@ nav ul li a {
 footer {
     background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px; /* Adjust as necessary */
+    color: #fff; /* White color for icons */
+    text-decoration: none;
+}
+
+/* Style specific icons, replace text with actual icons when using an icon library */
+#facebook-icon::before {
+    content: 'FB'; /* Placeholder for Facebook icon */
+}
+
+#instagram-icon::before {
+    content: 'IG'; /* Placeholder for Instagram icon */
+}
+
+#whatsapp-icon::before {
+    content: 'WA'; /* Placeholder for WhatsApp icon */
+}
+
 
 footer h2 {
     margin: 0;
