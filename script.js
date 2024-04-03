@@ -75,6 +75,10 @@ function setupCategoryButtons() {
     });
 }
 
+
+// Initialize the button setup
+setupCategoryButtons();
+
 function loadMenuCategory(category) {
     const menuItems = menu[category];
     let content = `<h2>${category}</h2><div>`;
@@ -86,6 +90,8 @@ function loadMenuCategory(category) {
                 <div class="menu-description">
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
+                    <input type="number" class="quantity-selector" value="1" min="1">
+                    <button class="apply-button">Apply</button>
                 </div>
             </div>`;
     });
@@ -95,8 +101,22 @@ function loadMenuCategory(category) {
 }
 
 
-// Initialize the button setup
-setupCategoryButtons();
 
+document.getElementById('appetizers-btn').click()
 
-//New change has been made
+function setupMenuItems() {
+    const menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            this.classList.toggle('selected');
+            // Reset quantity to 1 and hide Apply button when deselected
+            if (!this.classList.contains('selected')) {
+                this.querySelector('.quantity-selector').value = 1;
+                this.querySelector('.apply-button').style.display = 'none';
+            }
+        });
+    });
+}
+
+setupMenuItems()

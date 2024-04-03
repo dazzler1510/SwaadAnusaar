@@ -47,9 +47,32 @@ nav button:hover {
 }
 
 .menu-item img {
-    width: 100%;
+    width: 200px;    /* Adjust the width as desired */
+    height: 200px;   /* Adjust the height as desired */
+    object-fit: cover;
+    border-radius: 10px; /* Optional: for rounded corners */
     transition: transform 0.3s ease;
+    position: relative;
 }
+
+.quantity-selector {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.menu-item.selected .quantity-selector {
+    display: block;
+}
+
+/* Add this to keep the zoom effect on selection */
+.menu-item.selected img {
+    transform: scale(1.1);
+}
+
 
 .menu-item:hover img {
     transform: scale(1.1);
@@ -63,3 +86,25 @@ nav button:hover {
 .menu-item:hover .menu-description {
     display: block;
 }
+
+/* Existing styles... */
+
+.quantity-selector, .apply-button {
+    display: none; /* Initially hidden */
+    margin-top: 10px;
+}
+
+.selected .quantity-selector, .selected .apply-button {
+    display: inline-block; /* Show when item is selected */
+}
+
+.apply-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
