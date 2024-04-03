@@ -90,8 +90,6 @@ function loadMenuCategory(category) {
                 <div class="menu-description">
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
-                    <input type="number" class="quantity-selector" value="1" min="1">
-                    <button class="apply-button">Apply</button>
                 </div>
             </div>`;
     });
@@ -103,20 +101,3 @@ function loadMenuCategory(category) {
 
 
 document.getElementById('appetizers-btn').click()
-
-function setupMenuItems() {
-    const menuItems = document.querySelectorAll('.menu-item');
-
-    menuItems.forEach(item => {
-        item.addEventListener('click', function() {
-            this.classList.toggle('selected');
-            // Reset quantity to 1 and hide Apply button when deselected
-            if (!this.classList.contains('selected')) {
-                this.querySelector('.quantity-selector').value = 1;
-                this.querySelector('.apply-button').style.display = 'none';
-            }
-        });
-    });
-}
-
-setupMenuItems()
