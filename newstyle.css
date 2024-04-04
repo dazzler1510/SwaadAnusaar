@@ -183,3 +183,5 @@ nav ul li a {
 
 
 li, button, .menu-item {cursor: pointer; }
+
+.image-section img {max-width: 70%;}
