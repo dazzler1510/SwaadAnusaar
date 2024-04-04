@@ -1,7 +1,7 @@
 menu = {
         "Appetizers": [
             { name: "Paneer Tikka", description: "Marinated paneer grilled with spices." },
-            { name: "Samosa", description: "Fried pastry with spiced potatoes and peas.", image: "src/img/menu/samosa.jpg" },
+            { name: "Samosa", description: "Fried pastry with spiced potatoes and peas."},
             { name: "Aloo Tikki", description: "Spiced potato patties with coriander and green chilies." },
             { name: "Papdi Chaat", description: "Crispy dough wafers served with potatoes, chickpeas, and tangy chutneys." },
             { name: "Pakora", description: "Fried fritters made from vegetables and gram flour." },
@@ -13,7 +13,7 @@ menu = {
             { name: "Gobi Manchurian", description: "Cauliflower florets in a tangy Manchurian sauce." }
         ],
         "Main Courses": [
-            { name: "Butter Chicken", description: "Creamy tomato curry with tender chicken pieces.", image:"" },
+            { name: "Butter Chicken", description: "Creamy tomato curry with tender chicken pieces."},
             { name: "Palak Paneer", description: "Paneer cubes in a smooth spinach sauce." },
             { name: "Chole Bhature", description: "Spicy chickpeas curry served with fried bread called Bhature." },
             { name: "Chicken Tikka Masala", description: "Grilled chicken chunks in a spicy sauce." },
@@ -53,8 +53,20 @@ function formatImageName(name) {
 Object.keys(menu).forEach(category => {
     menu[category].forEach(item => {
         item.image = "src/img/menu/" + formatImageName(item.name);
+        item.price = generateRandomPrice()
     });
 });
+
+function generateRandomPrice() {
+    let price = Math.floor(Math.random() * (800 - 50 + 1)) + 50;
+    
+    price = Math.round(price / 10) * 10;
+    
+    if (price % 10 !== 0) {
+        price += 9;
+    }
+    return price;
+}
     
     
 function setupCategoryButtons() {
@@ -76,7 +88,7 @@ function setupCategoryButtons() {
 }
 
 
-// Initialize the button setup
+
 setupCategoryButtons();
 
 function loadMenuCategory(category) {
@@ -89,6 +101,7 @@ function loadMenuCategory(category) {
                 <img src="${item.image}" alt="${item.name}">
                 <div class="menu-description">
                     <h3>${item.name}</h3>
+                    <p><strong>Rs. ${item.price}</strong></p>
                     <p>${item.description}</p>
                 </div>
             </div>`;
